@@ -12,7 +12,7 @@ import java.util.List;
 public class RecommendationController {
 
     @Autowired
-    RecommendationService recommendationService;
+    private RecommendationService recommendationService;
 
     @GetMapping("/{videoId}/list")
     public List<Recommendation> getOrderedRecommendations(@PathVariable Long videoId) {

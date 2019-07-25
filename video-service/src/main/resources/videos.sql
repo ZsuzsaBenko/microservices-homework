@@ -1,0 +1,10 @@
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (1, 'Avicii, Imagine Dragons - Heart Upon My Sleeve', 'https://www.youtube.com/embed/SgYql46C3rc');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (2, 'Imagine Dragons - Natural', 'https://www.youtube.com/embed/0I647GU3Jsc');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (3, 'Imagine Dragons - Whatever It Takes', 'https://www.youtube.com/embed/gOsM-DYAEhY');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (4, 'Imagine Dragons - Believer', 'https://www.youtube.com/embed/7wtfhZwyrcc');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (5, 'Imagine Dragons - Radioactive', 'https://www.youtube.com/embed/ktvTqknDobU');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (6, 'Imagine Dragons - Thunder', 'https://www.youtube.com/embed/fKopy74weus');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (7, 'Imagine Dragons - Zero', 'https://www.youtube.com/embed/j60ClcNYWu4');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (8, 'Imagine Dragons - Birds (ft.Elisa)', 'https://www.youtube.com/embed/fQ-BPdkoSMw');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (9, 'Imagine Dragons - Walking the Wire', 'https://www.youtube.com/embed/1nv9br7P7g0');
+INSERT INTO VIDEO (ID, NAME, URL) VALUES (10, 'Imagine Dragons - Demons', 'https://www.youtube.com/embed/mWRsgZuwf_8');
