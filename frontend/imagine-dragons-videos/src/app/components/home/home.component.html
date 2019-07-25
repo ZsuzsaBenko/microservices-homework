@@ -1,6 +1,13 @@
-<h1>Imagine Dragons Music Videos</h1>
-<div>
-  <ul *ngFor="let video of videos">
-    <li><a [routerLink]="['/video', video.id]">{{ video.name }}</a></li>
-  </ul>
+<div class="home-container">
+  <h1>Imagine Dragons Music Videos</h1>
+  <div id="carousel">
+    <img id="carousel-img3" src="../../../assets/img/id3.jpg" alt="natural">
+    <img id="carousel-img2" src="../../../assets/img/id2.jpg" alt="band">
+    <img id="carousel-img1" src="../../../assets/img/id1.jpg" alt="origins">
+  </div>
+  <div id="video-list">
+    <ul *ngFor="let video of videos">
+      <li><a [routerLink]="['/video', video.id]">{{ video.name }}</a></li>
+    </ul>
+  </div>
 </div>

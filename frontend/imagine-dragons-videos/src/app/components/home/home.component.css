@@ -1,0 +1,54 @@
+.home-container {
+  background-color: teal;
+  margin: 0;
+  padding-bottom: 50px;
+}
+
+#carousel {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#carousel img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+  padding: 30px;
+  color: ivory;
+}
+
+#video-list {
+  margin: 550px auto 0;
+  max-width: 900px;
+  padding: 50px 0 50px;
+  background-color: ivory;
+  text-align: center;
+}
+
+#video-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+#video-list ul li {
+  list-style-type: none;
+  margin: 20px;
+}
+
+#video-list ul li a {
+  color: teal;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+#video-list ul li a:hover {
+  color: black;
+}
