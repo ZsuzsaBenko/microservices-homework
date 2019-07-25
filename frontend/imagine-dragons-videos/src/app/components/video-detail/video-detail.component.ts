@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./video-detail.component.css']
 })
 export class VideoDetailComponent implements OnInit {
-  videoDetails: VideoDetails;
+  videoDetails = new VideoDetails();
   videoSrc: any;
   videoId: number;
 
@@ -23,12 +23,10 @@ export class VideoDetailComponent implements OnInit {
     this.videoId = this.route.snapshot.params.id;
 
     this.videoService.getVideoDetails(this.videoId).subscribe(response => {
-      this.videoDetails = new VideoDetails();
       this.videoDetails.id = response.id;
       this.videoDetails.name = response.name;
       this.videoDetails.recommendations = response.recommendations;
       this.videoSrc = this.getSafeUrl(response.url);
-      console.log(this.videoDetails);
     });
   }
 

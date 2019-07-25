@@ -5,7 +5,21 @@
   </iframe>
   <div>
     <ul *ngFor="let recommendation of videoDetails.recommendations">
-      <li>{{ recommendation.comment}}</li>
+      <li>
+        <div>
+          <p>{{ recommendation.creationTime | date: 'yyyy-MM-dd' }}</p>
+          <p>
+            <span>
+              <i *ngIf="recommendation.rating >= 1" class="material-icons">star</i>
+              <i *ngIf="recommendation.rating >= 2" class="material-icons">star</i>
+              <i *ngIf="recommendation.rating >= 3" class="material-icons">star</i>
+              <i *ngIf="recommendation.rating >= 4" class="material-icons">star</i>
+              <i *ngIf="recommendation.rating >= 5" class="material-icons">star</i>
+          </span>
+            {{ recommendation.comment }}
+          </p>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
