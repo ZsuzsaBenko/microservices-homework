@@ -53,7 +53,6 @@ public class VideoService {
         HttpEntity<Recommendation> request = new HttpEntity<>(recommendation);
         String url = baseUrl + "/update";
         return restTemplate.exchange(url, HttpMethod.PUT, request, Recommendation.class).getBody();
-
     }
 
     private Video getVideoById(Long videoId) {

@@ -40,7 +40,7 @@ public class VideoController {
     @PutMapping("/{id}/recommendation")
     public Recommendation updateRecommendation(@PathVariable Long id,
                                                @RequestBody Recommendation recommendation) {
-        log.info("New update for recommendation " + id + ".");
+        log.info("New update for recommendation " + recommendation.getId() + ".");
         return videoService.updateRecommendation(recommendation);
     }
 }
