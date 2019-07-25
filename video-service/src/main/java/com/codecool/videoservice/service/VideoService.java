@@ -43,10 +43,6 @@ public class VideoService {
                 .build();
     }
 
-    private Video getVideoById(Long videoId) {
-        return videoRepository.findById(videoId).orElse(null);
-    }
-
     public Recommendation saveNewRecommendation(Recommendation recommendation) {
         HttpEntity<Recommendation> request = new HttpEntity<>(recommendation);
         String url = baseUrl + "/save";
@@ -58,5 +54,9 @@ public class VideoService {
         String url = baseUrl + "/update";
         return restTemplate.exchange(url, HttpMethod.PUT, request, Recommendation.class).getBody();
 
+    }
+
+    private Video getVideoById(Long videoId) {
+        return videoRepository.findById(videoId).orElse(null);
     }
 }
