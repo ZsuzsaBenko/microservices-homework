@@ -21,5 +21,15 @@
         </div>
       </li>
     </ul>
+    <div>
+      <form ngForm (ngSubmit)="onSubmit()">
+        <label for="comment">Add a comment!</label>
+        <input type="text" id="comment" maxlength="200" name="comment" [(ngModel)]="newComment">
+        <label for="rating">Rate the song!</label>
+        <input type="number" id="rating" min="0" max="5" name="rating" [(ngModel)]="newRating">
+        <input type="submit" value="Submit">
+      </form>
+
+    </div>
   </div>
 </div>

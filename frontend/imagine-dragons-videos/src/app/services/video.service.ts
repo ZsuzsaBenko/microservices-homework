@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpEvent, HttpRequest, HttpParams} from '@angular/common/http';
 import {Video} from '../models/Video';
 import {VideoDetails} from '../models/VideoDetails';
+import {Recommendation} from '../models/Recommendation';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -28,4 +29,8 @@ export class VideoService {
   }
 
 
+  saveNewRecommendation(recommendation: Recommendation) {
+    const url = this.baseUrl + '/' + recommendation.videoId + '/recommendation';
+    return this.http.post(url, recommendation, httpOptions);
+  }
 }
