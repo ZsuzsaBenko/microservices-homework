@@ -33,4 +33,9 @@ export class VideoService {
     const url = this.baseUrl + '/' + recommendation.videoId + '/recommendation';
     return this.http.post(url, recommendation, httpOptions);
   }
+
+  updateComment(recommendation: Recommendation) {
+    const url = this.baseUrl + '/' + recommendation.videoId + '/recommendation';
+    return this.http.put(url, recommendation, httpOptions);
+  }
 }

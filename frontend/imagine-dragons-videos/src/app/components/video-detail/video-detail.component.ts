@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {VideoService} from '../../services/video.service';
 import {VideoDetails} from '../../models/VideoDetails';
 import {DomSanitizer} from '@angular/platform-browser';
@@ -16,6 +16,8 @@ export class VideoDetailComponent implements OnInit {
   videoId: number;
   newComment: string;
   newRating: number;
+  @ViewChild('commentText', {static: false}) commentText;
+
 
   constructor(private videoService: VideoService,
               private route: ActivatedRoute,
@@ -37,11 +39,29 @@ export class VideoDetailComponent implements OnInit {
     recommendation.rating = (this.newRating >= 0 && this.newRating <= 5) ? this.newRating : 0;
     recommendation.videoId = this.videoId;
 
-    this.videoService.saveNewRecommendation(recommendation).subscribe( response => {
+    this.videoService.saveNewRecommendation(recommendation).subscribe(response => {
       this.getDetails();
       this.newComment = '';
       this.newRating = undefined;
     });
+  }
+
+  makeTextEditable(index: number) {
+    const item = document.getElementById(index.toString(10));
+    item.setAttribute('contentEditable', 'true');
+    item.classList.add('update-comment');
+  }
+
+  onEdit(index: number, recommendation: Recommendation) {
+    const item = document.getElementById(index.toString(10));
+    const updatedComment = item.textContent;
+
+    item.setAttribute('contentEditable', 'false');
+    item.classList.remove('update-comment');
+
+    recommendation.comment = updatedComment;
+
+    this.videoService.updateComment(recommendation).subscribe( response => this.getDetails());
   }
 
   getDetails() {

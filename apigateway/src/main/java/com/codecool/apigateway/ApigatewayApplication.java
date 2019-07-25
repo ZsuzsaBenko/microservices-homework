@@ -38,6 +38,7 @@ public class ApigatewayApplication {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
+        config.addAllowedOrigin("http://localhost:4200");
         config.addAllowedOrigin("http://localhost:4200/**");
         config.addAllowedHeader("*");
         config.addAllowedMethod("OPTIONS");

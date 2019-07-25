@@ -4,20 +4,21 @@
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
   </iframe>
   <div>
-    <ul *ngFor="let recommendation of videoDetails.recommendations">
+    <ul *ngFor="let recommendation of videoDetails.recommendations, let i = index" >
       <li>
         <div>
           <p>{{ recommendation.creationTime | date: 'yyyy-MM-dd' }}</p>
-          <p>
-            <span>
+          <span>
               <i *ngIf="recommendation.rating >= 1" class="material-icons">star</i>
               <i *ngIf="recommendation.rating >= 2" class="material-icons">star</i>
               <i *ngIf="recommendation.rating >= 3" class="material-icons">star</i>
               <i *ngIf="recommendation.rating >= 4" class="material-icons">star</i>
               <i *ngIf="recommendation.rating >= 5" class="material-icons">star</i>
           </span>
+          <span [id]="i" (keydown.enter)="onEdit(i, recommendation)">
             {{ recommendation.comment }}
-          </p>
+          </span>
+          <i class="material-icons" (click)="makeTextEditable(i)">edit</i>
         </div>
       </li>
     </ul>
