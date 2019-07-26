@@ -1,36 +1,42 @@
-<h2>{{ videoDetails.name }}</h2>
-<div>
-  <iframe width="560" height="315" [src]="videoSrc"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-  </iframe>
-  <div>
-    <ul *ngFor="let recommendation of videoDetails.recommendations, let i = index" >
-      <li>
-        <div>
-          <p>{{ recommendation.creationTime | date: 'yyyy-MM-dd' }}</p>
-          <span>
-              <i *ngIf="recommendation.rating >= 1" class="material-icons">star</i>
-              <i *ngIf="recommendation.rating >= 2" class="material-icons">star</i>
-              <i *ngIf="recommendation.rating >= 3" class="material-icons">star</i>
-              <i *ngIf="recommendation.rating >= 4" class="material-icons">star</i>
-              <i *ngIf="recommendation.rating >= 5" class="material-icons">star</i>
+<div class="video-detail-container">
+  <div class="logo">
+    <img src="../../../assets/img/id-logo.png" alt="logo" id="logo">
+  </div>
+  <h2>{{ videoDetails.name }}</h2>
+  <div class="video-details">
+    <div class="iframe-container">
+      <iframe [src]="videoSrc" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
+    <div class="recommendations">
+      <ul *ngFor="let recommendation of videoDetails.recommendations, let i = index" >
+        <li>
+          <div>
+            <p>{{ recommendation.creationTime | date: 'yyyy-MM-dd' }}</p>
+            <span id="rating-stars">
+              <i *ngIf="recommendation.rating >= 1" class="material-icons star">star</i>
+              <i *ngIf="recommendation.rating >= 2" class="material-icons star">star</i>
+              <i *ngIf="recommendation.rating >= 3" class="material-icons star">star</i>
+              <i *ngIf="recommendation.rating >= 4" class="material-icons star">star</i>
+              <i *ngIf="recommendation.rating >= 5" class="material-icons star">star</i>
           </span>
-          <span [id]="i" (keydown.enter)="onEdit(i, recommendation)">
+            <span [id]="i" (keydown.enter)="onEdit(i, recommendation)">
             {{ recommendation.comment }}
           </span>
-          <i class="material-icons" (click)="makeTextEditable(i)">edit</i>
-        </div>
-      </li>
-    </ul>
-    <div>
-      <form ngForm (ngSubmit)="onSubmit()">
-        <label for="comment">Add a comment!</label>
-        <input type="text" id="comment" maxlength="200" name="comment" [(ngModel)]="newComment">
-        <label for="rating">Rate the song!</label>
-        <input type="number" id="rating" min="0" max="5" name="rating" [(ngModel)]="newRating">
-        <input type="submit" value="Submit">
-      </form>
+            <i class="material-icons edit-pen" (click)="makeTextEditable(i)">edit</i>
+          </div>
+        </li>
+      </ul>
+      <div>
+        <form class="form" ngForm (ngSubmit)="onSubmit()">
+          <label for="comment">Add a comment!</label>
+          <input type="text" id="comment" maxlength="200" name="comment" [(ngModel)]="newComment">
+          <label for="rating">Rate the song!</label>
+          <input type="number" id="rating" min="0" max="5" name="rating" [(ngModel)]="newRating">
+          <input type="submit" value="Submit">
+        </form>
 
+      </div>
     </div>
   </div>
 </div>

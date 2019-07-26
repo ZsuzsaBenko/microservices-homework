@@ -20,6 +20,7 @@
   max-width: 900px;
   margin: 0 auto;
   position: relative;
+  border-radius: 5px;
 }
 
 #carousel img {
@@ -28,6 +29,7 @@
   position: absolute;
   top: 0;
   box-shadow: 0 0 5px #333;
+  border-radius: 5px;
 }
 
 h1 {
@@ -45,6 +47,7 @@ h1 {
   background-color: ivory;
   text-align: center;
   box-shadow: 0 0 5px black;
+  border-radius: 5px;
 }
 
 #video-list ul {
