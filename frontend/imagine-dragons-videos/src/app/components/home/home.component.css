@@ -4,6 +4,13 @@
   padding-bottom: 50px;
 }
 
+#logo {
+  display: block;
+  max-width: 900px;
+  height: auto;
+  margin: 0 auto;
+}
+
 #carousel {
   max-width: 900px;
   margin: 0 auto;
@@ -20,8 +27,7 @@
 h1 {
   text-align: center;
   margin-top: 0;
-  padding: 30px;
-  color: ivory;
+  color: teal;
 }
 
 #video-list {

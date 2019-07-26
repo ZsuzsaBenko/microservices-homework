@@ -15,21 +15,34 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.videoService.getVideos().subscribe(response => this.videos = response);
-    setInterval(() => {this.movePictures(); }, 15000);
+    setInterval(() => {
+      this.changePictures();
+    }, 15000);
   }
 
-  movePictures() {
+  changePictures() {
     const pic1 = document.getElementById('carousel-img1');
     const pic2 = document.getElementById('carousel-img2');
     const pic3 = document.getElementById('carousel-img3');
-    const pics = [pic3, pic2, pic1];
-    console.log('called');
 
-    setTimeout(() => pic1.style.display = 'none', 5000);
-    setTimeout(() => pic2.style.display = 'none', 10000);
     setTimeout(() => {
-      pics.forEach(pic => pic.style.display = 'block');
-    }, 15000);
+      pic1.style.transition = 'opacity 1s ease-out';
+      pic1.style.opacity = '0';
+      pic2.style.transition = 'none';
+      pic2.style.opacity = '1';
+    }, 4000);
+    setTimeout(() => {
+      pic2.style.transition = 'opacity 1s ease-out';
+      pic2.style.opacity = '0';
+      pic3.style.transition = 'none';
+      pic3.style.opacity = '1';
+    }, 9000);
+    setTimeout(() => {
+      pic1.style.transition = 'opacity 1s ease-out';
+      pic1.style.opacity = '1';
+      pic3.style.transition = 'opacity 1s ease-out';
+      pic3.style.opacity = '0';
+    }, 14000);
   }
 
 }
