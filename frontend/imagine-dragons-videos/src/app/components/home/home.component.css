@@ -1,12 +1,17 @@
 .home-container {
-  background-color: teal;
+  background-color: rgb(34, 83, 80);
   margin: 0;
   padding-bottom: 50px;
 }
 
+.logo {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 #logo {
   display: block;
-  max-width: 900px;
+  width: 90%;
   height: auto;
   margin: 0 auto;
 }
@@ -22,20 +27,24 @@
   height: auto;
   position: absolute;
   top: 0;
+  box-shadow: 0 0 5px #333;
 }
 
 h1 {
   text-align: center;
   margin-top: 0;
-  color: teal;
+  padding-bottom: 25px;
+  color: rgb(34, 83, 80);
+  text-shadow: 2px 2px #333;
 }
 
 #video-list {
-  margin: 550px auto 0;
+  margin: 32vw auto 0;
   max-width: 900px;
   padding: 50px 0 50px;
   background-color: ivory;
   text-align: center;
+  box-shadow: 0 0 5px black;
 }
 
 #video-list ul {
@@ -49,12 +58,44 @@ h1 {
 }
 
 #video-list ul li a {
-  color: teal;
+  color: rgb(34, 83, 80);
   padding: 20px;
   text-decoration: none;
   font-size: 18px;
+  font-weight: bold;
 }
 
 #video-list ul li a:hover {
   color: black;
 }
+
+@media only screen and (max-width: 1600px){
+  #video-list {
+    margin: 40vw auto 0;
+  }
+}
+
+@media only screen and (max-width: 1400px){
+  #video-list {
+    margin: 45vw auto 0;
+  }
+}
+
+@media only screen and (max-width: 1200px){
+  #video-list {
+    margin: 50vw auto 0;
+  }
+}
+
+@media only screen and (max-width: 1000px){
+  #video-list {
+    margin: 55vw auto 0;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  #video-list {
+    margin: 60vw auto 0;
+  }
+}
+
